@@ -17,8 +17,10 @@ const DUMMY_PRODUCTS = [
   },
 ];
 
-const Products = () => {
-  const renderItem = ({ item }) => <ProductItem {...item} />;
+const Products = ({ onPressDetailHandler }) => {
+  const renderItem = ({ item }) => (
+    <ProductItem {...item} onPressDetailHandler={onPressDetailHandler} />
+  );
 
   return (
     <View className="mt-3">

@@ -53,7 +53,6 @@ export const sendCartData = (cart) => {
           }),
         }
       );
-      console.log(response);
       if (!response.ok) {
         throw new Error("Sending cart data failed!");
       }
