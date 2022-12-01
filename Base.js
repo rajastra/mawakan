@@ -5,6 +5,8 @@ import Home from "./components/stack/Home";
 import Cart from "./components/stack/Cart";
 import Detail from "./components/stack/Detail";
 import Register from "./components/stack/Register";
+import Login from "./components/stack/Login";
+import User from "./components/stack/User";
 
 const Stack = createNativeStackNavigator();
 const Base = () => {
@@ -31,11 +33,23 @@ const Base = () => {
           </>
         ) : (
           <>
+          <Stack.Screen
+          name="User"
+          component={User}
+          options={{ headerShown: false }}
+        />
+           <Stack.Screen 
+            name="Login"
+            component={Login}
+            options={{ headerShown: false }}
+            />
+            
             <Stack.Screen
               name="Register"
               component={Register}
               options={{ headerShown: false }}
             />
+           
           </>
         )}
       </Stack.Navigator>
