@@ -10,7 +10,7 @@ import User from "./components/stack/User";
 
 const Stack = createNativeStackNavigator();
 const Base = () => {
-  const isLogin = false;
+  const isLogin = true;
   return (
     <NavigationContainer>
       <Stack.Navigator>

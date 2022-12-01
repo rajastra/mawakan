@@ -43,9 +43,9 @@ const ProductItem = ({
   };
 
   return (
-    <View className="flex  bg-red-200">
+    <View className="flex bg-red-200">
       <Image
-        className="w-full h-20 mt-5"
+        className="w-full h-20 mt-3"
         source={{
           uri: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8c2hvZXN8ZW58MHx8MHx8&w=1000&q=80",
         }}
@@ -55,11 +55,16 @@ const ProductItem = ({
         <Text className="text-2xl text-right">${price}</Text>
       </View>
       <View className="items-end mr-5 my-3">
-        <MaterialCommunityIcons name="basket-plus" size={30} color="green" />
+        <MaterialCommunityIcons
+          name="basket-plus"
+          size={30}
+          color="green"
+          onPress={addToCartHandler}
+        />
       </View>
 
       <Pressable onPress={detailHandler}>
-        <Text className="text-center text-xl mx-5 p-2 rounded-2xl bg-green-800">
+        <Text className="text-center text-xl mx-5 p-2 mb-2 rounded-2xl bg-green-800">
           Details
         </Text>
       </Pressable>
