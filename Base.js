@@ -10,7 +10,7 @@ import User from "./components/stack/User";
 
 const Stack = createNativeStackNavigator();
 const Base = () => {
-  const isLogin = false;
+  const isLogin = true;
   return (
     <NavigationContainer>
       <Stack.Navigator>
@@ -33,23 +33,22 @@ const Base = () => {
           </>
         ) : (
           <>
-          <Stack.Screen
-          name="User"
-          component={User}
-          options={{ headerShown: false }}
-        />
-           <Stack.Screen 
-            name="Login"
-            component={Login}
-            options={{ headerShown: false }}
+            <Stack.Screen
+              name="User"
+              component={User}
+              options={{ headerShown: false }}
             />
-            
+            <Stack.Screen
+              name="Login"
+              component={Login}
+              options={{ headerShown: false }}
+            />
+
             <Stack.Screen
               name="Register"
               component={Register}
               options={{ headerShown: false }}
             />
-           
           </>
         )}
       </Stack.Navigator>
