@@ -36,20 +36,21 @@ const Register = () => {
       <Text className="text-2xl font-bold mb-5">Register</Text>
       <Text className="text-sm font-bold mb-10">Selamat datang di aplikasi makawan</Text>
       <View className="flex w-80 gap-4">
-      <TextInput
-       className="px-5 py-3 bg-white rounded-xl"
-        placeholder="Username"
-        onChangeText={setUsername}
-        value={username}
-      />
+      <TextInput className="px-5 py-3 bg-white rounded-xl" placeholder="Name" onChangeText={setName} value={name} />
+      <TextInput className="px-5 py-3 bg-white rounded-xl" placeholder="Email" onChangeText={setEmail} value={email} />
       <TextInput
       className="px-5 py-3 bg-white rounded-xl"
         placeholder="Password"
         onChangeText={setPassword}
         value={password}
       />
-      <TextInput className="px-5 py-3 bg-white rounded-xl" placeholder="Email" onChangeText={setEmail} value={email} />
-      <TextInput className="px-5 py-3 bg-white rounded-xl" placeholder="Name" onChangeText={setName} value={name} />
+      <TextInput
+       className="px-5 py-3 bg-white rounded-xl"
+        placeholder="Username"
+        onChangeText={setUsername}
+        value={username}
+      />
+  
       <Pressable>
         <Text className="text-white bg-red-400 rounded-xl px-5 py-3 text-center">Register</Text>
       </Pressable>
