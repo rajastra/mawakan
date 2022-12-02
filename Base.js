@@ -7,21 +7,17 @@ import Detail from "./components/stack/Detail";
 import Register from "./components/stack/Register";
 import Login from "./components/stack/Login";
 import User from "./components/stack/User";
+import { useSelector } from "react-redux";
 
 const Stack = createNativeStackNavigator();
 const Base = () => {
-  const isLogin = true;
+
+  const isLogedIn = useSelector((state) => state.login.isLogedIn);
+
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        {/* <Stack.Screen
-          name="Home"
-          component={Home}
-          options={{ headerShown: false }}
-        />
-        <Stack.Screen name="Cart" component={Cart} />
-        <Stack.Screen name="Detail" component={Detail} /> */}
-        {isLogin ? (
+        {isLogedIn ? (
           <>
             <Stack.Screen
               name="Home"
