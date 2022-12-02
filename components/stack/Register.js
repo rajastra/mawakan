@@ -7,6 +7,8 @@ const Register = () => {
   const [email, setEmail] = React.useState("");
   const [name, setName] = React.useState("");
   const submitHandler = async () => {
+    // cek if data is empty
+    if (username === "" || password === "" || email === "" || name === "") return;
     fetch("http://192.168.1.23:8000/api/v1/users/registrasi", {
       method: "POST",
       headers: {
@@ -14,10 +16,10 @@ const Register = () => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        user: "rajass",
-        password: "12345678910",
-        email: "rajsa@gmail.com",
-        name: "raja lah",
+        user: username,
+        password: password,
+        email: email,
+        name: name,
       }),
     })
       .then((response) => {
@@ -50,7 +52,7 @@ const Register = () => {
       />
       <TextInput className="px-5 py-3 bg-white rounded-xl" placeholder="Email" onChangeText={setEmail} value={email} />
       <TextInput className="px-5 py-3 bg-white rounded-xl" placeholder="Name" onChangeText={setName} value={name} />
-      <Pressable>
+      <Pressable onPress={submitHandler}>
         <Text className="text-white bg-red-400 rounded-xl px-5 py-3 text-center">Register</Text>
       </Pressable>
       </View>
