@@ -46,7 +46,13 @@ const Register = () => {
         onChangeText={setPassword}
         value={password}
       />
-      <Pressable>
+      <TextInput
+      className="px-5 py-3 bg-white rounded-xl"
+        placeholder="Username"
+        onChangeText={setUsername}
+        value={username}
+      />
+      <Pressable className={submitHandler}>
         <Text className="text-white bg-red-400 rounded-xl px-5 py-3 text-center">Register</Text>
       </Pressable>
       </View>
