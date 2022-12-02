@@ -39,7 +39,6 @@ const Home = ({ navigation }) => {
   }
   return (
     <View className="flex-1 bg-gray-200 pt-6">
-      <Text className="text-2xl text-center">Home</Text>
       <MainHeader onPressHandler={onPressHandler} />
       <Products onPressDetailHandler={onPressDetailHandler} />
       <Pressable onPress={onLogoutHandler}>

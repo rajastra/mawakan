@@ -11,7 +11,9 @@ import { useSelector } from "react-redux";
 
 const Stack = createNativeStackNavigator();
 const Base = () => {
+
   const isLogedIn = useSelector((state) => state.login.isLogedIn);
+
   return (
     <NavigationContainer>
       <Stack.Navigator>
@@ -27,23 +29,22 @@ const Base = () => {
           </>
         ) : (
           <>
-          <Stack.Screen
-          name="User"
-          component={User}
-          options={{ headerShown: false }}
-        />
-           <Stack.Screen 
-            name="Login"
-            component={Login}
-            options={{ headerShown: false }}
+            <Stack.Screen
+              name="User"
+              component={User}
+              options={{ headerShown: false }}
             />
-            
+            <Stack.Screen
+              name="Login"
+              component={Login}
+              options={{ headerShown: false }}
+            />
+
             <Stack.Screen
               name="Register"
               component={Register}
               options={{ headerShown: false }}
             />
-           
           </>
         )}
       </Stack.Navigator>

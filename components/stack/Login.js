@@ -12,10 +12,10 @@ const Login = () => {
     dispatch(loginActions.login({ email, password }));    
   };
   return (
-    <View className="flex-1 pt-5 justify-center items-center bg-gray-200">
+    <View className="flex-1 pt-5 justify-center items-center bg-neutral-200">
       <Text className="text-2xl font-bold mb-5">Login</Text>
       <Text className="text-sm font-bold mb-10">
-        Silahkan login menggunakan akun yang anda sudah buat
+        Silahkan login menggunakan akun yang anda
       </Text>
       <View className="flex w-80 gap-4">
         <TextInput
