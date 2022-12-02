@@ -5,6 +5,7 @@ import Products from "../shop/Products";
 import { fetchCartData, sendCartData } from "../../store/cart-action";
 import { useSelector, useDispatch } from "react-redux";
 import { loginActions } from "../../store/login-slice";
+import { AntDesign } from "@expo/vector-icons";
 
 let isInitial = true;
 
@@ -36,13 +37,21 @@ const Home = ({ navigation }) => {
   };
   const onLogoutHandler = () => {
     dispatch(loginActions.logout());
-  }
+  };
   return (
-    <View className="flex-1 bg-gray-200 pt-6">
-      <MainHeader onPressHandler={onPressHandler} />
+    <View className="flex-1 bg-gray-200 pt-7">
+      <View className="flex-row justify-between px-3">
+        <Text>MainHeader</Text>
+        <AntDesign
+          name="shoppingcart"
+          size={24}
+          color="black"
+          onPress={onPressHandler}
+        />
+      </View>
       <Products onPressDetailHandler={onPressDetailHandler} />
       <Pressable onPress={onLogoutHandler}>
-        <Text className="bg-red-500 p-5 mt-5 self-center" >Logout</Text>
+        <Text className="bg-red-500 p-5 mt-5 self-center">Logout</Text>
       </Pressable>
     </View>
   );
