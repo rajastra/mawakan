@@ -26,10 +26,10 @@ const CartItem = ({ item }) => {
       </View>
       <View className="flex flex-col ">
         <Text className="text-2xl">{title}</Text>
-        <Text className="text-lg">RP {price}</Text>
+        <Text className="text-lg">${price}</Text>
         <View className="flex flex-row">
-          <Text className="text-lg">Total : {total}</Text>
-          <View className="flex flex-row bg-slate-400">
+          <Text className="text-lg">Total : ${total}</Text>
+          <View className="flex flex-row bg-slate-400 justify-between mx-11">
             <Pressable onPress={removeItemHandler}>
               <Text className="text-2xl px-1  bg-green-800">-</Text>
             </Pressable>

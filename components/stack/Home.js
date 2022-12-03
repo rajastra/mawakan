@@ -5,7 +5,7 @@ import { fetchCartData, sendCartData } from "../../store/cart-action";
 import { useSelector, useDispatch } from "react-redux";
 import { loginActions } from "../../store/login-slice";
 import { AntDesign } from "@expo/vector-icons";
-import { Searchbar } from 'react-native-paper';
+import { Searchbar } from "react-native-paper";
 
 let isInitial = true;
 
@@ -53,13 +53,13 @@ const Home = ({ navigation }) => {
         />
       </View>
       <Searchbar
-          className="mt-3 h-10"
-          inputStyle={{ fontSize: 14 }}
-          placeholder="Cari product anda..."
-          onChangeText={onChangeSearch}
-          value={search}
-        />
-      
+        className="mt-3 h-10"
+        inputStyle={{ fontSize: 14 }}
+        placeholder="Cari product anda..."
+        onChangeText={onChangeSearch}
+        value={search}
+      />
+
       <Products onPressDetailHandler={onPressDetailHandler} />
       <Pressable onPress={onLogoutHandler}>
         <Text className="bg-red-500 p-5 mt-5 self-center">Logout</Text>
