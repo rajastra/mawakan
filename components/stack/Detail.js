@@ -6,7 +6,7 @@ const Detail = ({ route }) => {
   return (
     <View>
       <Text className="text-xl">{item.title}</Text>
-      <Text>Hello</Text>
+      <Text>Halo</Text>
     </View>
   );
 };
