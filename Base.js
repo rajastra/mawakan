@@ -11,10 +11,8 @@ import { useSelector } from "react-redux";
 
 const Stack = createNativeStackNavigator();
 const Base = () => {
-
   // const isLogedIn = useSelector((state) => state.login.isLogedIn);
   const isLogedIn = true;
-
 
   return (
     <NavigationContainer>
