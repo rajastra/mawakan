@@ -3,9 +3,18 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { cartActions } from "../../store/cart-slice";
 
-const Detail = ({ route }) => {
+const Detail = ({ route, id, title, price }) => {
   const { item } = route.params;
-
+  const dispatch = useDispatch();
+  const addToCartHandler = () => {
+    dispatch(
+      cartActions.addItemTocart({
+        id,
+        title,
+        price,
+      })
+    );
+  };
   return (
     <View className="flex">
       <Image
@@ -24,7 +33,9 @@ const Detail = ({ route }) => {
           <Text className="text-sm text-justify">{item.description}</Text>
         </View>
         <View className="border rounded-full p-3 bg-green-500 mx-4 my-14">
-          <Text className="text-xl text-center">ADD to CART</Text>
+          <Text className="text-xl text-center" onPress={addToCartHandler}>
+            ADD to CART
+          </Text>
         </View>
       </View>
     </View>
