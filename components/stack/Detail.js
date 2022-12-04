@@ -3,10 +3,11 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { cartActions } from "../../store/cart-slice";
 
-const Detail = ({ route, id, title, price }) => {
+const Detail = ({ route }) => {
   const { item } = route.params;
   const dispatch = useDispatch();
   const addToCartHandler = () => {
+    const { id, title, price } = item;
     dispatch(
       cartActions.addItemTocart({
         id,
