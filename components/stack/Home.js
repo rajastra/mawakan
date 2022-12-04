@@ -43,14 +43,16 @@ const Home = ({ navigation }) => {
   };
   return (
     <View className="flex-1 bg-gray-200 pt-7">
-      <View className="flex-row justify-between px-3">
-        <Text className="text-2xl text-center font-bold">MAKAWAN</Text>
-        <AntDesign
-          name="shoppingcart"
-          size={24}
-          color="black"
-          onPress={onPressHandler}
-        />
+      <View className="flex-row flex-initial justify-center">
+        <Text className="text-3xl font-bold text-center left-6">MAKAWAN</Text>
+        <View className="left-20">
+          <AntDesign
+            name="shoppingcart"
+            size={26}
+            color="black"
+            onPress={onPressHandler}
+          />
+        </View>
       </View>
       <View className="rounded-full  mx-2 my-2">
         <Searchbar
