@@ -34,7 +34,7 @@ const Detail = ({ route, id, title, price }) => {
         </View>
         <View className="border rounded-full p-3 bg-green-500 mx-4 my-14">
           <Text className="text-xl text-center" onPress={addToCartHandler}>
-            ADD to CART
+            ADD TO CART
           </Text>
         </View>
       </View>
