@@ -16,7 +16,6 @@ const ProductItem = ({
   title,
   price,
   description,
-
   onPressDetailHandler,
 }) => {
   const dispatch = useDispatch();

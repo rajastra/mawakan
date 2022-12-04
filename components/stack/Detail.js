@@ -5,10 +5,8 @@ import { cartActions } from "../../store/cart-slice";
 
 const Detail = ({ route, id, title, price }) => {
   const { item } = route.params;
-  const dispatch = useDispatch({ item });
-  const addToCartHandler = (item) => {
-    // and then send Http request
-    // fetch('firebase-url', { method: 'POST', body: JSON.stringify(newCart) })
+  const dispatch = useDispatch();
+  const addToCartHandler = () => {
     dispatch(
       cartActions.addItemTocart({
         id,

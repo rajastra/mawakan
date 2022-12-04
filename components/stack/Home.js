@@ -44,7 +44,7 @@ const Home = ({ navigation }) => {
   return (
     <View className="flex-1 bg-gray-200 pt-7">
       <View className="flex-row justify-between px-3">
-        <Text>MainHeader</Text>
+        <Text className="text-2xl text-center font-bold">MAKAWAN</Text>
         <AntDesign
           name="shoppingcart"
           size={24}
@@ -52,14 +52,15 @@ const Home = ({ navigation }) => {
           onPress={onPressHandler}
         />
       </View>
-      <Searchbar
-        className="mt-3 h-10"
-        inputStyle={{ fontSize: 14 }}
-        placeholder="Cari product anda..."
-        onChangeText={onChangeSearch}
-        value={search}
-      />
-
+      <View className="rounded-full  mx-2 my-2">
+        <Searchbar
+          className="mt-3 h-10"
+          inputStyle={{ fontSize: 14 }}
+          placeholder="Cari product anda..."
+          onChangeText={onChangeSearch}
+          value={search}
+        />
+      </View>
       <Products onPressDetailHandler={onPressDetailHandler} />
       <Pressable onPress={onLogoutHandler}>
         <Text className="bg-red-500 p-5 mt-5 self-center">Logout</Text>
