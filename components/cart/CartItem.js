@@ -29,13 +29,19 @@ const CartItem = ({ item }) => {
         <Text className="text-lg">${price}</Text>
         <View className="flex flex-row">
           <Text className="text-lg">Total : ${total}</Text>
-          <View className="flex flex-row bg-slate-400 justify-between mx-11">
-            <Pressable onPress={removeItemHandler}>
-              <Text className="text-2xl px-1  bg-green-800">-</Text>
+          <View className="absolute mx-40 flex flex-row">
+            <Pressable
+              className="bg-emerald-600 border-2 rounded-lg"
+              onPress={removeItemHandler}
+            >
+              <Text className="text-xl px-0.5"> - </Text>
             </Pressable>
-            <Text className="text-2xl px-1">{quantity}</Text>
-            <Pressable onPress={addItemHandler}>
-              <Text className="text-2xl px-1 bg-green-800">+</Text>
+            <Text className="text-xl px-1">{quantity}</Text>
+            <Pressable
+              className="bg-emerald-600 border-2 rounded-lg"
+              onPress={addItemHandler}
+            >
+              <Text className="text-xl"> + </Text>
             </Pressable>
           </View>
         </View>

@@ -1,4 +1,4 @@
-import { Pressable, Text, View } from "react-native";
+import { Pressable, Text, View, FlatList } from "react-native";
 import React, { useEffect } from "react";
 import Products from "../shop/Products";
 import { fetchCartData, sendCartData } from "../../store/cart-action";
@@ -63,10 +63,20 @@ const Home = ({ navigation }) => {
           value={search}
         />
       </View>
-      <Products onPressDetailHandler={onPressDetailHandler} />
-      <Pressable onPress={onLogoutHandler}>
-        <Text className="bg-red-500 p-5 mt-5 self-center">Logout</Text>
-      </Pressable>
+      <FlatList
+        ListHeaderComponent={
+          <>
+            <Products onPressDetailHandler={onPressDetailHandler} />
+          </>
+        }
+        ListFooterComponent={
+          <>
+            <Pressable onPress={onLogoutHandler}>
+              <Text className="bg-red-500 p-5 mt-5 self-center">Logout</Text>
+            </Pressable>
+          </>
+        }
+      />
     </View>
   );
 };
