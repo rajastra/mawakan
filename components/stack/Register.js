@@ -7,7 +7,6 @@ const Register = () => {
   const [email, setEmail] = React.useState("");
   const [name, setName] = React.useState("");
   const submitHandler = async () => {
-    console.log(username);
     // cek if data is empty
     if (username === "" || password === "" || email === "" || name === "")
       return;
