@@ -7,9 +7,11 @@ const Register = () => {
   const [email, setEmail] = React.useState("");
   const [name, setName] = React.useState("");
   const submitHandler = async () => {
+    console.log(username);
     // cek if data is empty
-    if (username === "" || password === "" || email === "" || name === "") return;
-    fetch("http://192.168.1.23:8000/api/v1/users/registrasi", {
+    if (username === "" || password === "" || email === "" || name === "")
+      return;
+    fetch("http://192.168.43.18:8000/api/v1/users/registrasi", {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -36,25 +38,39 @@ const Register = () => {
   return (
     <View className="flex-1 pt-5 justify-center items-center bg-gray-200">
       <Text className="text-2xl font-bold mb-5">Register</Text>
-      <Text className="text-sm font-bold mb-10">Selamat datang di aplikasi makawan</Text>
+      <Text className="text-sm font-bold mb-10">
+        Selamat datang di aplikasi makawan
+      </Text>
       <View className="flex w-80 gap-4">
-      <TextInput className="px-5 py-3 bg-white rounded-xl" placeholder="Name" onChangeText={setName} value={name} />
-      <TextInput className="px-5 py-3 bg-white rounded-xl" placeholder="Email" onChangeText={setEmail} value={email} />
-      <TextInput
-      className="px-5 py-3 bg-white rounded-xl"
-        placeholder="Password"
-        onChangeText={setPassword}
-        value={password}
-      />
-      <TextInput
-      className="px-5 py-3 bg-white rounded-xl"
-        placeholder="Username"
-        onChangeText={setUsername}
-        value={username}
-      />
-      <Pressable className={submitHandler}>
-        <Text className="text-white bg-red-400 rounded-xl px-5 py-3 text-center">Register</Text>
-      </Pressable>
+        <TextInput
+          className="px-5 py-3 bg-white rounded-xl"
+          placeholder="Name"
+          onChangeText={setName}
+          value={name}
+        />
+        <TextInput
+          className="px-5 py-3 bg-white rounded-xl"
+          placeholder="Email"
+          onChangeText={setEmail}
+          value={email}
+        />
+        <TextInput
+          className="px-5 py-3 bg-white rounded-xl"
+          placeholder="Password"
+          onChangeText={setPassword}
+          value={password}
+        />
+        <TextInput
+          className="px-5 py-3 bg-white rounded-xl"
+          placeholder="Username"
+          onChangeText={setUsername}
+          value={username}
+        />
+        <Pressable onPress={submitHandler}>
+          <Text className="text-white bg-red-400 rounded-xl px-5 py-3 text-center">
+            Register
+          </Text>
+        </Pressable>
       </View>
     </View>
   );
