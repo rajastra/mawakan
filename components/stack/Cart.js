@@ -1,4 +1,11 @@
-import { View, Text, FlatList, Pressable, Image } from "react-native";
+import {
+  View,
+  Text,
+  FlatList,
+  Pressable,
+  SafeAreaView,
+  ScrollView,
+} from "react-native";
 import React from "react";
 import { useSelector } from "react-redux";
 import CartItem from "../cart/CartItem";
@@ -31,28 +38,22 @@ const Cart = () => {
 
   return (
     <View>
-      <FlatList
-        data={cartItems}
-        renderItem={renderItem}
-        keyExtractor={(item) => item.id}
-        // make flat list spacing each item
-        ItemSeparatorComponent={() => <View style={{ height: 10 }} />}
-      />
-      {/* make button with pressable and styling*/}
-      <FlatList
-        ListFooterComponent={
-          <>
-            <Pressable onPress={checkoutHandler}>
-              <Text className="font-arial text-xl bottom-0">
-                Total Amount : $. {totalAmount}
-              </Text>
-              <Text className="border-2 rounded-xl px-5 py-3 mt-2 self-right">
-                Checkout
-              </Text>
-            </Pressable>
-          </>
-        }
-      />
+      <ScrollView>
+        <FlatList
+          data={cartItems}
+          renderItem={renderItem}
+          keyExtractor={(item) => item.id}
+          // make flat list spacing each item
+          ItemSeparatorComponent={() => <View style={{ height: 10 }} />}
+        />
+        {/* make button with pressable and styling*/}
+        <Pressable onPress={checkoutHandler}>
+          <Text className="font-arial text-xl">
+            Total Amount : $. {totalAmount}
+          </Text>
+          <Text className="border-2 rounded-xl self-center">Checkout</Text>
+        </Pressable>
+      </ScrollView>
     </View>
   );
 };
