@@ -13,7 +13,7 @@ const Login = () => {
 
   const submitHandler = async () => {
     // dispatch(loginActions.login(email, password));
-    fetch(`${BASE_URL}users/login`, {
+    fetch(`${BASE_URL}/users/login`, {
       method: "POST",
       headers: {
         Accept: "application/json",
