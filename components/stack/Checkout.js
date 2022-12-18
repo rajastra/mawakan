@@ -1,6 +1,7 @@
 import { View, Text, Image, Pressable } from "react-native";
 import React from "react";
 import { useSelector } from "react-redux";
+import { BASE_URL } from "../tools/url";
 
 const Checkout = ({ route }) => {
   const { totalAmount, item } = route.params;
@@ -45,7 +46,7 @@ const Checkout = ({ route }) => {
     // } catch (error) {
     //   console.log(error);
     // }
-    fetch("http://192.168.1.21:8000/api/v1/transacation/orders", {
+    fetch(`${BASE_URL}/transacation/orders`, {
       method: "POST",
       headers: {
         Accept: "application/json",

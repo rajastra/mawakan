@@ -1,3 +1,4 @@
+import { BASE_URL } from "../components/tools/url";
 import { loginActions } from "./login-slice";
 import { uiActions } from "./ui-slice";
 
@@ -5,7 +6,7 @@ import { uiActions } from "./ui-slice";
 export const loginHandler = (email, password) => {
   return async (dispatch) => {
     const login = async () => {
-      const response = await fetch("http://192.168.1.21:8000/api/v1/users/login", {
+      const response = await fetch(`${BASE_URL}/users/login`, {
         method: "POST",
         headers: {
           Accept: "application/json",

@@ -1,6 +1,7 @@
 import { View, Text, TextInput, Button, Pressable } from "react-native";
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
+import { BASE_URL } from "../tools/url";
 
 const Register = () => {
   const [username, setUsername] = React.useState("");
@@ -12,7 +13,7 @@ const Register = () => {
     // cek if data is empty
     if (username === "" || password === "" || email === "" || name === "")
       return;
-    fetch("http://192.168.1.21:8000/api/v1/users/registrasi", {
+    fetch(`${BASE_URL}/users/registrasi`, {
       method: "POST",
       headers: {
         Accept: "application/json",

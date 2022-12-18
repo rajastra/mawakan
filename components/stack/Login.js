@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { loginActions } from "../../store/login-slice";
 import { tokenActions } from "../../store/token-slice";
 import { addToken } from "../../store/token-action";
+import { BASE_URL } from "../tools/url";
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -12,7 +13,7 @@ const Login = () => {
 
   const submitHandler = async () => {
     // dispatch(loginActions.login(email, password));
-    fetch("http://192.168.1.21:8000/api/v1/users/login", {
+    fetch(`${BASE_URL}users/login`, {
       method: "POST",
       headers: {
         Accept: "application/json",
