@@ -2,6 +2,7 @@ import { View, Text, Pressable, Image } from "react-native";
 import React from "react";
 import { cartActions } from "../../store/cart-slice";
 import { useDispatch } from "react-redux";
+import { AntDesign } from "@expo/vector-icons";
 
 const CartItem = ({ item }) => {
   const { title, quantity, total, price, id, img } = item;
@@ -10,39 +11,35 @@ const CartItem = ({ item }) => {
   const removeItemHandler = () => {
     dispatch(cartActions.removeItemFromCart(id));
   };
-  console.log(img)
+  console.log(img);
 
   const addItemHandler = () => {
-    dispatch(cartActions.addItemTocart({ id, title, price, img}));
+    dispatch(cartActions.addItemTocart({ id, title, price, img }));
   };
   return (
-    <View className="flex flex-row p-3 space-x-3 bg-red-400 ">
+    <View className="flex flex-row mx-1 p-3 space-x-3 bg-gray-800 rounded-xl">
       <View className="">
         <Image
-          className="w-20 h-20 rounded-md "
+          className="w-20 h-24 rounded-md"
           source={{
             uri: img,
           }}
         />
       </View>
       <View className="flex flex-col ">
-        <Text className="text-2xl">{title}</Text>
-        <Text className="text-lg">${price}</Text>
+        <Text className="text-2xl text-white">{title}</Text>
+        <Text className="text-lg text-white">${price}</Text>
         <View className="flex flex-row">
-          <Text className="text-lg">Total : ${total}</Text>
-          <View className="absolute mx-40 flex flex-row">
-            <Pressable
-              className="bg-emerald-600 border-2 rounded-lg"
-              onPress={removeItemHandler}
-            >
-              <Text className="text-xl px-0.5"> - </Text>
+          <Text className="text-lg text-white">Total : ${total}</Text>
+          <View className="absolute  mx-40 flex flex-row">
+            <Pressable onPress={removeItemHandler}>
+              <AntDesign name="minussquareo" size={24} color="white" />
             </Pressable>
-            <Text className="text-xl px-1">{quantity}</Text>
-            <Pressable
-              className="bg-emerald-600 border-2 rounded-lg"
-              onPress={addItemHandler}
-            >
-              <Text className="text-xl"> + </Text>
+            <Text className="font-bold text-xl px-1 text-white">
+              {quantity}
+            </Text>
+            <Pressable onPress={addItemHandler}>
+              <AntDesign name="plussquareo" size={24} color="white" />
             </Pressable>
           </View>
         </View>

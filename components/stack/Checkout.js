@@ -51,7 +51,7 @@ const Checkout = ({ route }) => {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
-        'Authorization': `Bearer ${token}`,
+        Authorization: `Bearer ${token}`,
       },
       body: JSON.stringify({
         customerName: "Raja Saputera",

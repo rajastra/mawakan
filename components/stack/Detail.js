@@ -7,7 +7,7 @@ const Detail = ({ route }) => {
   const { item } = route.params;
   const dispatch = useDispatch();
   const addToCartHandler = () => {
-    const { id, title, price , img} = item;
+    const { id, title, price, img } = item;
     dispatch(
       cartActions.addItemTocart({
         id,
@@ -27,16 +27,19 @@ const Detail = ({ route }) => {
       />
       <View>
         <View className="flex flex-row justify-between mx-4 my-2">
-          <Text className="text-2xl text-left ">{item.title}</Text>
-          <Text className="text-2xl text-right">${item.price}</Text>
+          <Text className="text-2xl text-left">{item.title}</Text>
+          <Text className="font-bold text-2xl text-right">${item.price}</Text>
         </View>
         <View className="border rounded-xl p-3 m-1">
           <Text className="text-lg">Description Product</Text>
           <Text className="text-sm text-justify">{item.description}</Text>
         </View>
-        <View className="border rounded-full p-3 bg-green-500 mx-4 my-14">
-          <Text className="text-xl text-center" onPress={addToCartHandler}>
-            ADD to CART
+        <View className="border rounded-full p-3 bg-stone-900 mx-6 my-14">
+          <Text
+            className="text-white text-xl text-center"
+            onPress={addToCartHandler}
+          >
+            Add To Cart
           </Text>
         </View>
       </View>

@@ -62,7 +62,7 @@ const Home = ({ navigation }) => {
         <Searchbar
           className="mt-3 h-10"
           inputStyle={{ fontSize: 14 }}
-          placeholder="Find your product..."
+          placeholder="Find your product ..."
           onChangeText={onChangeSearch}
           value={search}
         />
