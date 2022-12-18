@@ -11,7 +11,11 @@ let isInitial = true;
 
 const Home = ({ navigation }) => {
   const [search, updateSearch] = React.useState("");
-  const onChangeSearch = (query) => updateSearch(query);
+  const [query, setQuery] = React.useState("");
+  const onChangeSearch = (query) => {
+    updateSearch(query);
+    setQuery(query);
+  };
 
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart);
@@ -58,7 +62,7 @@ const Home = ({ navigation }) => {
         <Searchbar
           className="mt-3 h-10"
           inputStyle={{ fontSize: 14 }}
-          placeholder="Cari product anda..."
+          placeholder="Find your product..."
           onChangeText={onChangeSearch}
           value={search}
         />
@@ -66,7 +70,10 @@ const Home = ({ navigation }) => {
       <FlatList
         ListHeaderComponent={
           <>
-            <Products onPressDetailHandler={onPressDetailHandler} />
+            <Products
+              onPressDetailHandler={onPressDetailHandler}
+              query={query}
+            />
           </>
         }
         ListFooterComponent={

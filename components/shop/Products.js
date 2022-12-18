@@ -74,18 +74,26 @@ const DUMMY_PRODUCTS = [
   },
 ];
 
-const Products = ({ onPressDetailHandler }) => {
+const Products = ({ onPressDetailHandler, query }) => {
   const renderItem = ({ item }) => (
     <ProductItem {...item} onPressDetailHandler={onPressDetailHandler} />
   );
 
+  const filteredProducts = DUMMY_PRODUCTS.filter((product) =>
+    product.title.toLowerCase().includes(query.toLowerCase())
+  );
+
   return (
     <View className="mt-3">
-      <Text>Buy your favorite product</Text>
+      {/* <Text >Buy your favorite product</Text> */}
+      {/* make styling text above*/}
+      <Text className="text-2xl font-bold text-center mb-5">Buy your favorite product</Text>
       <FlatList
-        data={DUMMY_PRODUCTS}
+        data={filteredProducts}
         renderItem={renderItem}
         keyExtractor={(item) => item.id}
+        // make separator
+        ItemSeparatorComponent={() => <View className="my-2" />}
       />
     </View>
   );

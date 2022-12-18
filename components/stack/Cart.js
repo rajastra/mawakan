@@ -6,6 +6,11 @@ import { useNavigation } from "@react-navigation/native";
 
 const Cart = () => {
   const cartItems = useSelector((state) => state.cart.items);
+  const totalAmount = cartItems.reduce(
+    (sum, item) => sum + item.price * item.quantity,
+    0
+  );
+
   const navigation = useNavigation();
   const renderItem = ({ item }) => (
     <CartItem
@@ -29,9 +34,10 @@ const Cart = () => {
         ItemSeparatorComponent={() => <View style={{ height: 10 }} />}
       />
       {/* make button with pressable and styling*/}
-      <Pressable onPress={() => navigation.navigate("Checkout")}>
+      <Pressable onPress={() => navigation.navigate("Checkout",{totalAmount})}>
         <Text className="bg-green-300 px-5 py-3 mt-5 self-center">Checkout</Text>
       </Pressable>
+      <Text className="text-center mt-5">Total Amount: $. {totalAmount}</Text>
     </View>
   );
 };
