@@ -17,6 +17,7 @@ const ProductItem = ({
   title,
   price,
   description,
+  img,
   onPressDetailHandler,
 }) => {
   const dispatch = useDispatch();
@@ -47,12 +48,12 @@ const ProductItem = ({
       <Image
         className="w-full h-24 rounded-t-xl"
         source={{
-          uri: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8c2hvZXN8ZW58MHx8MHx8&w=1000&q=80",
+          uri: img,
         }}
       />
       <View className="flex flex-row justify-between mx-5">
-        <Text className="text-2xl text-left ">{title}</Text>
-        <Text className="text-2xl text-right">${price}</Text>
+        <Text className="text-xl text-left ">{title}</Text>
+        <Text className="text-xl text-right">${price}</Text>
       </View>
       <View className="items-end mr-5 my-3">
         <MaterialCommunityIcons

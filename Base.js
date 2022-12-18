@@ -13,8 +13,8 @@ import Checkout from "./components/stack/Checkout";
 const Stack = createNativeStackNavigator();
 const Base = () => {
   const token = useSelector((state) => state.token.token);
-  const isLogedIn = token ? true : false;
-  console.log(token);
+  // const isLogedIn = token ? true : false;
+  const isLogedIn = true;
   return (
     <NavigationContainer>
       <Stack.Navigator>
