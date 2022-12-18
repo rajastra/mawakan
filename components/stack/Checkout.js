@@ -2,6 +2,7 @@ import { View, Text, Image, Pressable } from "react-native";
 import React from "react";
 import { useSelector } from "react-redux";
 import { BASE_URL } from "../tools/url";
+import { useNavigation } from "@react-navigation/native";
 
 const Checkout = ({ route }) => {
   const { totalAmount, item } = route.params;
@@ -9,6 +10,7 @@ const Checkout = ({ route }) => {
   // print token type data
 
   const checkoutItem = async () => {
+    const navigation = useNavigation();
     const sendItems = item.map((i) => {
       const result = {
         description: i.name,
@@ -63,6 +65,7 @@ const Checkout = ({ route }) => {
       })
       .then((data) => {
         console.log(data);
+        navigation.navigate("Home");
       })
       .catch((error) => {
         console.log(error);
