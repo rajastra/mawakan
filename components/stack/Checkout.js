@@ -77,7 +77,9 @@ const Checkout = ({ route }) => {
       <Text className="text-xl text-center">${totalAmount}</Text>
       <Image source={require("../img/qr-dana.jpeg")} />
       <Pressable onPress={checkoutItem}>
-        <Text className="bg-green-300 px-5 py-3 mt-5 self-center">Confirm</Text>
+        <Text className="text-center text-xl font-semibold mx-5 p-4 mb-3 mt-3 rounded-2xl bg-green-600 text-white">
+          Confirm
+        </Text>
       </Pressable>
     </View>
   );

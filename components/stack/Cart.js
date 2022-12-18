@@ -37,24 +37,25 @@ const Cart = () => {
   };
 
   return (
-    <View>
-      <ScrollView>
-        <FlatList
-          data={cartItems}
-          renderItem={renderItem}
-          keyExtractor={(item) => item.id}
-          // make flat list spacing each item
-          ItemSeparatorComponent={() => <View style={{ height: 10 }} />}
-        />
-        {/* make button with pressable and styling*/}
-        <Pressable onPress={checkoutHandler}>
-          <Text className="font-arial text-xl">
-            Total Amount : $. {totalAmount}
-          </Text>
-          <Text className="border-2 rounded-xl self-center">Checkout</Text>
-        </Pressable>
-      </ScrollView>
-    </View>
+    <FlatList
+      data={cartItems}
+      renderItem={renderItem}
+      keyExtractor={(item) => item.id}
+      // make flat list spacing each item
+      ItemSeparatorComponent={() => <View style={{ height: 10 }} />}
+      ListFooterComponent={
+        <SafeAreaView>
+          <Pressable onPress={checkoutHandler}>
+            <Text className="font-arial text-xl mx-2 mt-7">
+              Total Amount : $. {totalAmount}
+            </Text>
+            <Text className="text-center text-xl font-semibold mx-5 p-2 mb-3 mt-3 rounded-2xl bg-green-700 text-white">
+              Checkout
+            </Text>
+          </Pressable>
+        </SafeAreaView>
+      }
+    />
   );
 };
 

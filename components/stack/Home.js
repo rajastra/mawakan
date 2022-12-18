@@ -79,7 +79,9 @@ const Home = ({ navigation }) => {
         ListFooterComponent={
           <>
             <Pressable onPress={onLogoutHandler}>
-              <Text className="bg-red-500 p-5 mt-5 self-center">Logout</Text>
+              <Text className="text-center text-xl font-semibold mx-5 p-2 mb-3 mt-3 rounded-2xl bg-red-700 text-white">
+                Logout
+              </Text>
             </Pressable>
           </>
         }
