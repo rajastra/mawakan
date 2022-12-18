@@ -1,16 +1,18 @@
 import { View, Text, TextInput, Button, Pressable } from "react-native";
 import React from "react";
+import { useNavigation } from "@react-navigation/native";
 
 const Register = () => {
   const [username, setUsername] = React.useState("");
   const [password, setPassword] = React.useState("");
   const [email, setEmail] = React.useState("");
   const [name, setName] = React.useState("");
+  const navigation = useNavigation();
   const submitHandler = async () => {
     // cek if data is empty
     if (username === "" || password === "" || email === "" || name === "")
       return;
-    fetch("http://192.168.43.18:8000/api/v1/users/registrasi", {
+    fetch("http://192.168.1.21:8000/api/v1/users/registrasi", {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -28,10 +30,12 @@ const Register = () => {
       })
       .then((data) => {
         console.log(data);
+        navigation.navigate("Login");
       })
       .catch((error) => {
         console.log(error);
       });
+
   };
 
   return (

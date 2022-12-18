@@ -24,6 +24,10 @@ const Cart = () => {
     />
   );
 
+  const checkoutHandler = () => {
+    navigation.navigate("Checkout", { totalAmount, item : cartItems });
+  };
+
   return (
     <View>
       <FlatList
@@ -34,7 +38,7 @@ const Cart = () => {
         ItemSeparatorComponent={() => <View style={{ height: 10 }} />}
       />
       {/* make button with pressable and styling*/}
-      <Pressable onPress={() => navigation.navigate("Checkout",{totalAmount})}>
+      <Pressable onPress={checkoutHandler}>
         <Text className="bg-green-300 px-5 py-3 mt-5 self-center">Checkout</Text>
       </Pressable>
       <Text className="text-center mt-5">Total Amount: $. {totalAmount}</Text>

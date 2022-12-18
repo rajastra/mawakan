@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const loginSlice = createSlice({
-  name: "cart",
+  name: "login",
   initialState: {
     token: "",
     isLogedIn: false,
