@@ -20,6 +20,7 @@ const Cart = () => {
         quantity: item.quantity,
         total: item.totalPrice,
         price: item.price,
+        img: item.img,
       }}
     />
   );

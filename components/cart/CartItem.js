@@ -4,15 +4,16 @@ import { cartActions } from "../../store/cart-slice";
 import { useDispatch } from "react-redux";
 
 const CartItem = ({ item }) => {
-  const { title, quantity, total, price, id } = item;
+  const { title, quantity, total, price, id, img } = item;
   const dispatch = useDispatch();
 
   const removeItemHandler = () => {
     dispatch(cartActions.removeItemFromCart(id));
   };
+  console.log(img)
 
   const addItemHandler = () => {
-    dispatch(cartActions.addItemTocart({ id, title, price }));
+    dispatch(cartActions.addItemTocart({ id, title, price, img}));
   };
   return (
     <View className="flex flex-row p-3 space-x-3 bg-red-400 ">
@@ -20,7 +21,7 @@ const CartItem = ({ item }) => {
         <Image
           className="w-20 h-20 rounded-md "
           source={{
-            uri: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8c2hvZXN8ZW58MHx8MHx8&w=1000&q=80",
+            uri: img,
           }}
         />
       </View>

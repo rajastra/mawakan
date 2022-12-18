@@ -7,12 +7,13 @@ const Detail = ({ route }) => {
   const { item } = route.params;
   const dispatch = useDispatch();
   const addToCartHandler = () => {
-    const { id, title, price } = item;
+    const { id, title, price , img} = item;
     dispatch(
       cartActions.addItemTocart({
         id,
         title,
         price,
+        img,
       })
     );
   };
@@ -21,7 +22,7 @@ const Detail = ({ route }) => {
       <Image
         className="w-full h-40 rounded-b-2xl"
         source={{
-          uri: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8c2hvZXN8ZW58MHx8MHx8&w=1000&q=80",
+          uri: item.img,
         }}
       />
       <View>

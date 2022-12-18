@@ -27,18 +27,18 @@ const ProductItem = ({
       title,
       price,
       description,
+      img,
     };
     onPressDetailHandler(item);
   };
 
   const addToCartHandler = () => {
-    // and then send Http request
-    // fetch('firebase-url', { method: 'POST', body: JSON.stringify(newCart) })
     dispatch(
       cartActions.addItemTocart({
         id,
         title,
         price,
+        img,
       })
     );
   };
