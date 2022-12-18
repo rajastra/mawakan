@@ -8,11 +8,12 @@ import Register from "./components/stack/Register";
 import Login from "./components/stack/Login";
 import User from "./components/stack/User";
 import { useSelector } from "react-redux";
+import Checkout from "./components/stack/Checkout";
 
 const Stack = createNativeStackNavigator();
 const Base = () => {
   // const isLogedIn = useSelector((state) => state.login.isLogedIn);
-  const isLogedIn = false;
+  const isLogedIn = true;
 
   return (
     <NavigationContainer>
@@ -26,6 +27,7 @@ const Base = () => {
             />
             <Stack.Screen name="Cart" component={Cart} />
             <Stack.Screen name="Detail" component={Detail} />
+            <Stack.Screen name="Checkout" component={Checkout} />
           </>
         ) : (
           <>
